@@ -1,0 +1,142 @@
+#cards {
+  display: flex;
+  flex-wrap: wrap;
+  width: 85%;
+  margin: 0 auto;
+}
+
+.card {
+  /* 卡片容器排版 */
+  flex: 7% 1 1;
+  height: 8vw;
+  border: 2px solid #e0e0e0;
+  margin: 2px;
+  box-sizing: border-box;
+  /* 卡片內部排版 */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.card img {
+  max-width: 30%;
+  align-self: center;
+}
+
+.card p {
+  margin: 3px;
+  font-size: 10px;
+}
+
+.card p:last-child {
+  transform: rotate(180deg);
+}
+
+.back {
+  background: url("https://assets-lighthouse.alphacamp.co/uploads/image/file/9222/ExportedContentImage_00.png");
+  background-size: cover;
+}
+
+.paired {
+  background-color: #dae0e3;
+}
+
+#header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 85%;
+  margin: 0 auto;
+}
+
+#header .title {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+#header .title img {
+  max-width: 3em;
+}
+
+#header .title h2 {
+  padding-left: 0.5em;
+}
+
+#header .score {
+  margin: 0;
+  color: #6c90ac;
+}
+
+#header .tried {
+  margin-top: 0;
+}
+
+.wrong {
+  animation-name: wrongAnimation;
+  animation-duration: 0.2s;
+  animation-iteration-count: 5;
+}
+
+.completed {
+  box-sizing: border-box;
+  position: absolute;
+  align-items: center;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  top: 38vh;
+  margin: auto;
+  background-color: RGBA(232, 246, 254, 0.8);
+  width: 90%;
+  padding: 50px 0;
+  animation-name: completedAnimation;
+  animation-duration: 0.4s;
+  animation-iteration-count: infinite;
+}
+.completed > p {
+  font-size: 1.5em;
+  color: black;
+  text-align: center;
+  margin: 0.5rem 0 0 0;
+}
+.completed > p:first-child {
+  font-size: 3em;
+  font-weight: 700;
+  color: #758d9a;
+}
+
+#playAgain {
+  padding: 0.8rem 1.25rem;
+  font-size: 1.25rem;
+  margin-top: 2rem;
+  border: none;
+  background-color: #2b4832;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@keyframes wrongAnimation {
+  to {
+    border: 2px solid #ffd54f;
+  }
+}
+
+@keyframes completedAnimation {
+  0% {
+    border: 10px solid red;
+  }
+  25% {
+    border: 10px solid yellow;
+  }
+  50% {
+    border: 10px solid blue;
+  }
+  75% {
+    border: 10px solid orange;
+  }
+  100% {
+    border: 10px solid green;
+  }
+}
